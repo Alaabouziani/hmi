@@ -1,0 +1,80 @@
+\section{Registration Flow}
+
+This section documents each state of the registration journey. Screenshots are labelled R0--R9 and should be read together with the explanations and validation notes provided beneath every figure.
+
+\subsection*{Initial State}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.82\textwidth]{reg-00-initial.png}
+  \caption{R0 --- Registration form presented in its initial, empty state.}
+\end{figure}
+\noindent\textit{Explanation:} The baseline interface exposes all nine components with neutral messaging. No validation feedback is visible until the user attempts to submit the form.
+
+\subsection*{Validation Errors}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.82\textwidth]{reg-01-missing-username.png}
+  \caption{R1 --- Missing username while both names are omitted.}
+\end{figure}
+\noindent\textit{Explanation:} When the user provides neither last nor first name, the form demands a username to avoid anonymous account creation. A contextual message clarifies the rule.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.82\textwidth]{reg-02-missing-contact.png}
+  \caption{R2 --- Missing both email and phone number.}
+\end{figure}
+\noindent\textit{Explanation:} At least one contact channel must be captured. The feedback highlights both fields and suggests filling at least one of them.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.82\textwidth]{reg-03-invalid-email.png}
+  \caption{R3 --- Invalid email format.}
+\end{figure}
+\noindent\textit{Explanation:} The validation pattern rejects malformed addresses and informs the user about the proper format (e.g., presence of `@` and domain suffix).
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.82\textwidth]{reg-04-invalid-phone.png}
+  \caption{R4 --- Invalid phone number format.}
+\end{figure}
+\noindent\textit{Explanation:} The phone field checks for permitted digits and length. The message prompts the user to correct the number or provide an email instead.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.82\textwidth]{reg-05-missing-password.png}
+  \caption{R5 --- Password left empty.}
+\end{figure}
+\noindent\textit{Explanation:} The password remains mandatory regardless of other inputs. The warning encourages the user to set a strong secret.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.82\textwidth]{reg-06-missing-confirm.png}
+  \caption{R6 --- Confirm password left empty.}
+\end{figure}
+\noindent\textit{Explanation:} The confirmation field ensures the user intentionally typed the password. The message directs the user to complete the secondary entry.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.82\textwidth]{reg-07-mismatch-password.png}
+  \caption{R7 --- Confirmation does not match the password.}
+\end{figure}
+\noindent\textit{Explanation:} Whenever the two secret fields diverge, both inputs are marked and the user is invited to retype them for consistency.
+
+\subsection*{Successful Submission}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.82\textwidth]{reg-08-summary.png}
+  \caption{R8 --- Summary screen confirming the captured data before final validation.}
+\end{figure}
+\noindent\textit{Explanation:} All validated information (except the raw password) is echoed back. The user may press \textit{Validate} to persist the account or \textit{Back} to revise inputs.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.82\textwidth]{reg-09-back-to-form.png}
+  \caption{R9 --- Returning to the editable form after pressing Back from the summary.}
+\end{figure}
+\noindent\textit{Explanation:} The form reopens with the previous entries pre-filled so the user can fine-tune specific fields before revalidating.
+

@@ -1,0 +1,40 @@
+\section{Context}
+\label{sec:context}
+
+The case study considers a desktop application that handles both user registration and authentication. The registration form initially presents nine interactive elements:
+\begin{itemize}
+  \item Last Name (optional)
+  \item First Name (optional)
+  \item Username
+  \item Email
+  \item Phone Number
+  \item Password
+  \item Confirm Password
+  \item Validate button
+  \item Cancel button
+\end{itemize}
+
+The interface must clearly communicate validation errors after the user presses the \textit{Validate} button, and it must reassure the user when the submission succeeds by showing a summary screen with the captured information and two controls: a final \textit{Validate} button and a \textit{Back} button for corrections.
+
+\subsection*{Field Constraints}
+
+\begin{longtable}{@{}p{0.25\textwidth}p{0.68\textwidth}@{}}
+\toprule
+\textbf{Field} & \textbf{Description and Validation Rule} \\
+\midrule
+Last Name & Optional. When provided, it is displayed verbatim in the confirmation screen. \\
+First Name & Optional. When provided, it is displayed verbatim in the confirmation screen. \\
+Username & Required if both Last Name and First Name are empty. The value must be non-empty once that condition applies. \\
+Email & Required if the Phone Number is empty. Must follow a valid email pattern (\texttt{local@domain}). \\
+Phone Number & Required if the Email is empty. Must respect the application's digit and length constraints. \\
+Password & Always required. Collected securely and never echoed back in plaintext. \\
+Confirm Password & Always required and must match the Password field exactly. \\
+Validate & Submits the form, triggering validation and either success confirmation or targeted feedback. \\
+Cancel & Aborts the process and returns the user to the neutral state. \\
+\bottomrule
+\end{longtable}
+
+\subsection*{Success Workflow}
+
+When every constraint is satisfied, the user advances to a confirmation view summarising all captured inputs (excluding raw passwords). The user must explicitly confirm the submission or return to the editable form via the \textit{Back} button to adjust any field before final validation.
+

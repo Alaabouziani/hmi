@@ -1,0 +1,64 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage[hidelinks]{hyperref}
+\usepackage{caption}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{float}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usepackage{eso-pic}
+
+\graphicspath{{../images/}}
+\setlist[itemize]{nosep,leftmargin=1.5em}
+\setlist[enumerate]{nosep,leftmargin=1.8em}
+
+\AddToShipoutPictureBG{%
+  \begin{tikzpicture}[remember picture,overlay]
+    \draw[line width=1pt, color=black]
+      ($(current page.north west)+(0.8cm,-0.8cm)$)
+      rectangle
+      ($(current page.south east)+(-0.8cm,0.8cm)$);
+  \end{tikzpicture}%
+}
+
+\begin{document}
+
+\hypersetup{pageanchor=false}
+\begin{titlepage}
+  \thispagestyle{empty}
+  \begin{center}
+    {\Large \textbf{Dr. Yahia Fares University of Medea}}\\[0.6cm]
+    {\large Faculty of Science}\\[0.4cm]
+    {\large Department of Mathematics and Computer Science}\\[0.6cm]
+    {\large 3rd Year in Computer Systems}\\[0.6cm]
+    {\large Academic Year: 2025/2026}\\[1.2cm]
+    {\Large \textbf{Practical Work 1}}\\[0.3cm]
+    {\large \textit{Introduction to the Design and Implementation of HMIs}}\\[1.5cm]
+    {\Huge \textbf{HMI Registration \& Authentication Report}}\\[1.5cm]
+    \vfill
+    {\large \textbf{Student:} Bouziani Alaa Eddine}\\[0.4cm]
+    {\large \textbf{Group:} 2}\\[0.8cm]
+    {\large \textbf{Instructor:} Practical Work Supervisor}\\[2cm]
+  \end{center}
+\end{titlepage}
+\hypersetup{pageanchor=true}
+\setcounter{page}{1}
+
+\tableofcontents
+\clearpage
+
+\input{sections/01-objectives}
+\input{sections/02-context}
+\input{sections/03-registration}
+\input{sections/04-authentication}
+\input{sections/05-automata}
+\input{sections/06-implementation-notes}
+\input{sections/07-conclusion}
+
+\end{document}
+

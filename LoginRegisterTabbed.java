@@ -29,6 +29,18 @@ public class LoginRegisterTabbed extends JFrame {
 
     // ---------------- Registration Panel ----------------
     private JPanel createRegistrationPanel() {
+        JPanel mainPanel = new JPanel(new BorderLayout());
+        mainPanel.setBackground(new Color(245, 247, 250));
+        
+        // Code label in top right corner
+        JLabel codeLabel = new JLabel("R0");
+        codeLabel.setFont(new Font("Segoe UI", Font.BOLD, 16));
+        codeLabel.setForeground(Color.GRAY);
+        codeLabel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 20));
+        mainPanel.add(codeLabel, BorderLayout.NORTH);
+        codeLabel.setHorizontalAlignment(SwingConstants.RIGHT);
+        
+        // Form panel
         JPanel panel = new JPanel(new GridBagLayout());
         panel.setBackground(new Color(245, 247, 250));
         GridBagConstraints gbc = new GridBagConstraints();
@@ -94,11 +106,24 @@ public class LoginRegisterTabbed extends JFrame {
         validateButton.addActionListener(e -> validateRegistration());
         cancelButton.addActionListener(e -> clearRegistrationFields());
 
-        return panel;
+        mainPanel.add(panel, BorderLayout.CENTER);
+        return mainPanel;
     }
 
     // ---------------- Login Panel ----------------
     private JPanel createLoginPanel() {
+        JPanel mainPanel = new JPanel(new BorderLayout());
+        mainPanel.setBackground(new Color(245, 247, 250));
+        
+        // Code label in top right corner
+        JLabel codeLabel = new JLabel("L0");
+        codeLabel.setFont(new Font("Segoe UI", Font.BOLD, 16));
+        codeLabel.setForeground(Color.GRAY);
+        codeLabel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 20));
+        mainPanel.add(codeLabel, BorderLayout.NORTH);
+        codeLabel.setHorizontalAlignment(SwingConstants.RIGHT);
+        
+        // Form panel
         JPanel panel = new JPanel(new GridBagLayout());
         panel.setBackground(new Color(245, 247, 250));
         GridBagConstraints gbc = new GridBagConstraints();
@@ -169,7 +194,8 @@ public class LoginRegisterTabbed extends JFrame {
             }
         });
 
-        return panel;
+        mainPanel.add(panel, BorderLayout.CENTER);
+        return mainPanel;
     }
 
     // ---------------- Registration Validation ----------------
@@ -219,6 +245,16 @@ public class LoginRegisterTabbed extends JFrame {
     private void validateLogin() {
         String username = loginUsernameField.getText().trim();
         String password = new String(loginPasswordField.getPassword());
+
+        if (username.isEmpty()) {
+            showError("Username is required!");
+            return;
+        }
+
+        if (password.isEmpty()) {
+            showError("Password is required!");
+            return;
+        }
 
         if (username.equals("admin") && password.equals("1234")) {
             showMessage("Login successful!");

@@ -1,0 +1,64 @@
+\section{Authentication Flow}
+
+The authentication module mirrors the registration attention to feedback and recoverability. Screenshots A0--A7 capture typical user pathways and edge cases.
+
+\subsection*{Baseline and Errors}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.82\textwidth]{auth-00-initial.png}
+  \caption{A0 --- Initial authentication form with neutral state.}
+\end{figure}
+\noindent\textit{Explanation:} The login UI displays username and password fields alongside action buttons and recovery shortcuts, with no error feedback yet.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.82\textwidth]{auth-01-missing-username.png}
+  \caption{A1 --- Username left empty.}
+\end{figure}
+\noindent\textit{Explanation:} A contextual alert invites the user to enter their username before proceeding.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.82\textwidth]{auth-02-missing-password.png}
+  \caption{A2 --- Password left empty.}
+\end{figure}
+\noindent\textit{Explanation:} The password field becomes highlighted with guidance to provide the secret credential.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.82\textwidth]{auth-03-invalid-credentials.png}
+  \caption{A3 --- Invalid username or password combination.}
+\end{figure}
+\noindent\textit{Explanation:} After submission, the form informs the user that the provided credentials do not match any account, without revealing which field was incorrect.
+
+\subsection*{Recovery and Success}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.82\textwidth]{auth-04-forgot-username.png}
+  \caption{A4 --- Forgotten username workflow.}
+\end{figure}
+\noindent\textit{Explanation:} The recovery dialog collects an email or phone number to send username reminders, reinforcing continuity for users who forgot their identifier.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.82\textwidth]{auth-05-forgot-password.png}
+  \caption{A5 --- Forgotten password workflow.}
+\end{figure}
+\noindent\textit{Explanation:} The process leads users through password reset instructions while maintaining a consistent look and feel with the main authentication form.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.82\textwidth]{auth-06-success.png}
+  \caption{A6 --- Successful authentication.}
+\end{figure}
+\noindent\textit{Explanation:} Upon valid credentials, the interface confirms success and transitions to the secured area (or displays a confirmation message, as illustrated).
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.82\textwidth]{auth-07-cancel.png}
+  \caption{A7 --- Cancel action returning to the neutral state.}
+\end{figure}
+\noindent\textit{Explanation:} The cancel button aborts the attempt and closes or resets the form, ensuring users can exit gracefully without residual messages.
+

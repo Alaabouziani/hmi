@@ -1,0 +1,22 @@
+\section{Interaction Automata}
+
+The numbered screens documented earlier map directly to states in two deterministic finite automata. Each transition is labelled with the initiating action and, where relevant, the validation outcome.
+
+\subsection*{Registration Automaton}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.9\textwidth]{auto-registration.png}
+  \caption{Automaton linking registration states R0--R9.}
+\end{figure}
+\noindent\textit{Explanation:} The graph emphasises how every submission funnel returns to R0 when the user presses \textit{Cancel}, while the \textit{Validate} action either routes to an error-specific state or advances to the confirmation node R8. From R8, the user may finalise the account or traverse \textit{Back} to R9 for edits, then re-validate.
+
+\subsection*{Authentication Automaton}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.9\textwidth]{auto-authentication.png}
+  \caption{Automaton linking authentication states A0--A7.}
+\end{figure}
+\noindent\textit{Explanation:} The authentication flow features clear exits for recovery scenarios and maintains a return path to A0 after cancellations or successful login completions.
+

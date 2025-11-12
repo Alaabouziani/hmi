@@ -1,0 +1,13 @@
+\section{Implementation Notes}
+
+The NetBeans Swing GUI Builder was used to instantiate the designed interfaces. Key steps:
+\begin{enumerate}
+  \item Create a new Java Swing form named \texttt{LoginRegisterTabbed} and configure a tabbed pane containing the registration and authentication panels.
+  \item Drag-and-drop Swing components (labels, text fields, password fields, buttons) while aligning them using NetBeans' layout guides to maintain consistent spacing.
+  \item Attach event handlers to the \textit{Validate}, \textit{Cancel}, and recovery buttons. Validation logic follows the rules summarised in Section~\ref{sec:context}.\\The full implementation is available at \path{/home/alaa/hmi/LoginRegisterTabbed.java}.
+  \item Display contextual errors through coloured labels or dialog boxes. On successful validation, open the confirmation dialog (registration) or navigate to the protected view (authentication).
+  \item Capture the screenshots listed earlier by running the application, populating the form with test data, and using the operating system's screenshot utility. Save the resulting images into \texttt{docs/images/}.
+\end{enumerate}
+
+Each screen capture should correspond to the state identifiers used in the automata to preserve traceability between design artefacts and the implementation.
+
